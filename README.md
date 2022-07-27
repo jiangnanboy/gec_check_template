@@ -16,19 +16,19 @@ java11
 sy/GecCheck
 
 ```
-        String templatePath = GecCheck.class.getClassLoader().getResource(PropertiesReader.get("template")).getPath().replaceFirst("/", "");
-        GecCheck gecRun = new GecCheck();
-        gecRun.init(templatePath);
-        String sentence;
-        while (true) {
-            System.out.println("Please input a sentence:");
-            Scanner scanner = new Scanner(System.in);
-            sentence = scanner.next();
-            String infoStr = gecRun.checkCorrect(sentence);
-            if(StringUtils.isNotBlank(infoStr)) {
-                System.out.println(infoStr);
-            }
-        }
+String templatePath = GecCheck.class.getClassLoader().getResource(PropertiesReader.get("template")).getPath().replaceFirst("/", "");
+GecCheck gecRun = new GecCheck();
+gecRun.init(templatePath);
+String sentence;
+while (true) {
+    System.out.println("Please input a sentence:");
+    Scanner scanner = new Scanner(System.in);
+    sentence = scanner.next();
+    String infoStr = gecRun.checkCorrect(sentence);
+    if(StringUtils.isNotBlank(infoStr)) {
+        System.out.println(infoStr);
+    }
+}
 ```
 
 output:
